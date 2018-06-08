@@ -6,7 +6,9 @@ const wrapper = props => {
     return (
         <React.Fragment>
             <Header/>
+            <div id='body'>
                 {props.children}
+            </div>
             <Footer/>
         </React.Fragment>
     )

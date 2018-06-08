@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:800');
+
+img.Logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.hcontainer {
+  display: block;
+  width: 80%;
+  padding-left: 2vw;
+  background: black;
+}
+
+li.headerItem {
+  display: inline-block;
+  padding: 8px;
+  margin: 10px;
+  transition: box-shadow .5s ease;
+  font-size: 1.5em;
+  color: white;
+  background-color: black;
+  font-family: Dosis, sans-serif;
+}
+
+a.active li.headerItem {
+  box-shadow: -5px 5px 0 #EEA1F2;
+  outline: 2px solid white;
+  color: #EEA1F2;
+}
+
+li.headerItem:hover {
+  box-shadow: -5px 5px 0 #EEA1F2;
+  outline: 2px solid white;
+}
