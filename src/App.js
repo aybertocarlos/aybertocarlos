@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {Route} from 'react-router-dom'
+
+import wrapper from './hoc/wrapper'
 
 class App extends Component {
     render() {
-        let example = {
-            anan: 'baban'
-        }
         return (
             <React.Fragment>
-                {...example}
+                <Route path='/' exact component={() => (<div>placeholder</div>)}/>
             </React.Fragment>
         );
     }
