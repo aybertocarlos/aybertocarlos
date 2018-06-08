@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Container, Row, Col} from 'reactstrap'
+import 'bootstrap/dist/css/bootstrap.css'
 import {slide as Menu} from 'react-burger-menu'
 import {isMobile} from 'react-device-detect'
 import {NavLink} from 'react-router-dom'
@@ -48,24 +50,53 @@ const Header = () => {
             background: 'rgba(0, 0, 0, 0.3)'
         }
     }
-    if(!isMobile) {
+    if (!isMobile) {
         return (
             <React.Fragment>
                 <header>
                     <div className={classes.hcontainer}>
-                        <NavLink exact to='/' activeClassName={classes.active}><li className={classes.headerItem}>Ana sayfa</li></NavLink>
-                        <NavLink exact to='/ceviriler' activeClassName={classes.active}><li className={classes.headerItem}>Çeviriler</li></NavLink>
-                        <NavLink exact to='/hakkimda' activeClassName={classes.active}><li className={classes.headerItem}>Hakkımda</li></NavLink>
-                        <NavLink exact to='/iletisim' activeClassName={classes.active}><li className={classes.headerItem}>İletişim</li></NavLink>
+                        <NavLink exact to='/' activeClassName={classes.active}>
+                            <li className={classes.headerItem}>Ana sayfa</li>
+                        </NavLink>
+                        <NavLink exact to='/ceviriler' activeClassName={classes.active}>
+                            <li className={classes.headerItem}>Çeviriler</li>
+                        </NavLink>
+                        <NavLink exact to='/hakkimda' activeClassName={classes.active}>
+                            <li className={classes.headerItem}>Hakkımda</li>
+                        </NavLink>
+                        <NavLink exact to='/iletisim' activeClassName={classes.active}>
+                            <li className={classes.headerItem}>İletişim</li>
+                        </NavLink>
                     </div>
                     <img className={classes.Logo} src={Logo}/>
                 </header>
             </React.Fragment>
         )
     }
-    if(isMobile) {
-        <div>mobile placeholder</div>
+    if (isMobile) {
+        return (
+            <React.Fragment>
+                <Container>
+                    <Row>
+                        <Col xs='5'>
+                            <NavLink exact to='/' activeClassName={classes.active}>
+                                <li className={classes.headerItem}>Ana sayfa</li>
+                            </NavLink>
+                            <NavLink exact to='/ceviriler' activeClassName={classes.active}>
+                                <li className={classes.headerItem}>Çeviriler</li>
+                            </NavLink>
+                            <NavLink exact to='/hakkimda' activeClassName={classes.active}>
+                                <li className={classes.headerItem}>Hakkımda</li>
+                            </NavLink>
+                            <NavLink exact to='/iletisim' activeClassName={classes.active}>
+                                <li className={classes.headerItem}>İletişim</li>
+                            </NavLink>
+                        </Col>
+                        <Col xs='7'><img className={classes.Logo} src={Logo} style={{width: '100%'}}/></Col>
+                    </Row>
+                </Container>
+            </React.Fragment>
+        )
     }
 }
-
 export default Header;

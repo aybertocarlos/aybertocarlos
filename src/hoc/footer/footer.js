@@ -13,6 +13,9 @@ const footer = () => {
                         <li className={classes.footerItem}><a>twitter.</a></li>
                         <li className={classes.footerItem}><a>twitch.</a></li>
                     </Col>
+                    <Col md='6'>
+                        <p className={classes.copyright}>Built with ReactJS - aybertocarlos &copy; 2018</p>
+                    </Col>
                 </Row>
             </Container>
         </footer>

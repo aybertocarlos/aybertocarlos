@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:700');
+
+.poster-container {
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+
+.header {
+  background-color: black;
+  height: 100%;
+}
+
+.header h2{
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: .5em;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  position: absolute;
+}
+
+.header-mobil {
+  background-color: black;
+  height: 100%;
+}
+
+.header-mobil h2{
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-top: .2em;
+}
+
+.poster {
+  width: 285px;
+  height: 285px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0;
+  overflow: hidden;
+  transition: all .5s ease;
+}
+
+.poster h3 {
+  color: white;
+  font-family: Heebo, sans-serif;
+  font-size: 1.5em;
+  position: absolute;
+  z-index: 2;
+  top: 285px;
+  transition: all .5s ease;
+  padding-left: .8em;
+}
+
+.poster .overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+  transition: all .5s ease;
+  position: absolute;
+}
+
+.poster:hover .overlay {
+  opacity: 0.7;
+}
+
+.poster:hover h3 {
+  top: 210px;
+}
+
+.netflix:before {
+  content: ' ';
+  background-image: url("../img/Netflix_Logo_Digital_Video.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  transition: all .5s ease;
+}
+
+@media (max-width: 678px) {
+  .poster-container {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}
