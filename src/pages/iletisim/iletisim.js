@@ -25,9 +25,9 @@ const iletisim = () => {
                                 <img src={BongSoon} width="100%"/>
                             </Col>
                             <Col md='9' className={classes.yazi}>
-                                <p style={isMobile ? {margin: '1.5em 0 0 0'} : {margin: '1.5em 0 0 1.5em'}}>{yazi1}</p>
+                                <p style={isMobile ? {margin: '1.5em 0 0 0'} : {margin: '1.5em 0 0 0'}}>{yazi1}</p>
                                 <p className={classes.email}>{email}</p>
-                                <p style={isMobile ? {margin: '0 0 1.5em 0'} : {margin: '.5em 0 0 1.5em'}}>{yazi2}</p>
+                                <p style={isMobile ? {margin: '0 0 1.5em 0'} : {margin: '.5em 0 0 0'}}>{yazi2}</p>
                                 <a href="http://puzzlesubs.com/member.php?action=profile&uid=4284"><div className={classes.buton}><p>PuzzleSubs profilim</p></div></a>
                                 <a href="http://steamcommunity.com/id/aybertocarlos/"><div className={classes.buton}><p>Steam profilim</p></div></a>
                             </Col>
