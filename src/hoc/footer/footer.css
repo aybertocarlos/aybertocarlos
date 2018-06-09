@@ -3,7 +3,7 @@
 footer {
   position:absolute;
   bottom:0;
-  width:100%;
+  width:100vw;
   height:60px;   /* Height of the footer */
   background:#000;
 }
@@ -23,6 +23,11 @@ li.footerItem {
   font-family: Heebo, sans-serif;
   padding: 18px;
   margin: 0;
+}
+
+.mobil {
+  text-align: center;
+  font-family: Heebo, sans-serif;
 }
 
 @media (max-width: 678px) {

@@ -27,8 +27,8 @@ const index = () => {
                                 </Col>
                             </Col>
                             :
-                            <Col md='1' style={{padding: 0}}>
-                                <Col xs='12' md='12' className={classes.header}>
+                            <Col md='1' style={{padding: 0}} className={classes.header + ' ' + classes["background-shadow"]}>
+                                <Col xs='12' md='12'>
                                     <h2>FAVORİLERİM</h2>
                                 </Col>
                             </Col>}

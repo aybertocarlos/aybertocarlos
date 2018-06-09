@@ -13,6 +13,34 @@ img.Logo {
   background: black;
 }
 
+.header-mobil {
+  width: 100%;
+  margin: 3.5em auto auto;
+  text-align: center;
+}
+
+li.headerItem-mobil {
+  display: inline-block;
+  padding: 8px;
+  margin: 10px;
+  transition: box-shadow .5s ease;
+  font-size: .9em;
+  color: white;
+  background-color: black;
+  font-family: Dosis, sans-serif;
+}
+
+a.active li.headerItem-mobil {
+  box-shadow: -5px 5px 0 #EEA1F2;
+  outline: 2px solid white;
+  color: #EEA1F2;
+}
+
+li.headerItem-mobil:hover {
+  box-shadow: -5px 5px 0 #EEA1F2;
+  outline: 2px solid white;
+}
+
 li.headerItem {
   display: inline-block;
   padding: 8px;
@@ -33,4 +61,17 @@ a.active li.headerItem {
 li.headerItem:hover {
   box-shadow: -5px 5px 0 #EEA1F2;
   outline: 2px solid white;
+}
+
+.debug {
+  position: absolute;
+  top: 35px;
+  right: -48px;
+  z-index: 999;
+  background-color: #643228;
+  font-size: 1em;
+  font-weight: 700;
+  transform: rotateZ(45deg);
+  padding: .5em 2.5em .5em 2.5em;
+  box-shadow: 0 0 5px black;
 }

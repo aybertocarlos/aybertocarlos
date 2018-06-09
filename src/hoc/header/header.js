@@ -53,6 +53,7 @@ const Header = () => {
     if (!isMobile) {
         return (
             <React.Fragment>
+                <div className={classes.debug}>In Development</div>
                 <header>
                     <div className={classes.hcontainer}>
                         <NavLink exact to='/' activeClassName={classes.active}>
@@ -78,21 +79,21 @@ const Header = () => {
             <React.Fragment>
                 <Container>
                     <Row>
-                        <Col xs='5'>
+                        <Col xs='12'><img className={classes.Logo} src={Logo} style={{width: '60%'}}/></Col>
+                        <Col xs='12' className={classes["header-mobil"]}>
                             <NavLink exact to='/' activeClassName={classes.active}>
-                                <li className={classes.headerItem}>Ana sayfa</li>
+                                <li className={classes["headerItem-mobil"]}>Ana sayfa</li>
                             </NavLink>
                             <NavLink exact to='/ceviriler' activeClassName={classes.active}>
-                                <li className={classes.headerItem}>Çeviriler</li>
+                                <li className={classes["headerItem-mobil"]}>Çeviriler</li>
                             </NavLink>
                             <NavLink exact to='/hakkimda' activeClassName={classes.active}>
-                                <li className={classes.headerItem}>Hakkımda</li>
+                                <li className={classes["headerItem-mobil"]}>Hakkımda</li>
                             </NavLink>
                             <NavLink exact to='/iletisim' activeClassName={classes.active}>
-                                <li className={classes.headerItem}>İletişim</li>
+                                <li className={classes["headerItem-mobil"]}>İletişim</li>
                             </NavLink>
                         </Col>
-                        <Col xs='7'><img className={classes.Logo} src={Logo} style={{width: '100%'}}/></Col>
                     </Row>
                 </Container>
             </React.Fragment>
