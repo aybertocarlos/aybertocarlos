@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import axios from 'axios'
 
 class Ceviriler extends Component {
     state = {
@@ -97,6 +97,12 @@ class Ceviriler extends Component {
         errorMsg: "",
         postGot: []
     }
+
+    componentDidMount () {
+        axios.get('https://api.jikan.moe/')
+            .then(res => {})
+    }
+
     render() {
         return (
             <div>ceviriler placeholder</div>
