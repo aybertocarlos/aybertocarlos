@@ -20,7 +20,7 @@ const hakkimda = () => {
                     <Col xs='12' md={{size: 6, offset: 3}} className={classes.header}>
                         <span>Hakkımda</span>
                     </Col>
-                    {isMobile ? null : <Col md='3' className={classes.anasayfa}><p>Ana sayfaya git</p></Col>}
+                    {isMobile ? null : <Col md='3' className={classes.anasayfa}><a href="/"><p>Ana sayfaya git</p></a></Col>}
                     <Col md='12'>
                         <Row>
                             <Col xs='12' md='3' className={isMobile ? classes["avatar-mobile"] : classes.avatar + ' ' + classes["background-shadow"]}>
