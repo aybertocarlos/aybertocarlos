@@ -1,8 +1,12 @@
 import React from 'react';
 import {isMobile} from 'react-device-detect'
+import {Col, Row, Container} from 'reactstrap'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import {faReact, faHtml5, faCss3, faJs, faTwitter, faTwitch, faGithub} from '@fortawesome/fontawesome-free-brands'
+
 import classes from './footer.css'
 import 'bootstrap/dist/css/bootstrap.css'
-import {Col, Row, Container} from 'reactstrap'
+import badge from '../../img/badge.png'
 
 const footer = () => {
     return (
@@ -10,12 +14,12 @@ const footer = () => {
             <Container fluid>
                 <Row>
                     <Col xs='12' md='6' className={isMobile ? classes.mobil : null}>
-                        <li className={classes.footerItem}><a>github.</a></li>
-                        <li className={classes.footerItem}><a>twitter.</a></li>
-                        <li className={classes.footerItem}><a>twitch.</a></li>
+                        <li className={classes.footerItem}><a href="https://github.com/aybertocarlos">github.<FontAwesomeIcon icon={faGithub}/></a></li>
+                        <li className={classes.footerItem}><a href="https://twitter.com/aybertocarlos">twitter.<FontAwesomeIcon icon={faTwitter}/></a></li>
+                        <li className={classes.footerItem}><a href="https://twitch.com/aybertocarlos">twitch.<FontAwesomeIcon icon={faTwitch}/></a></li>
                     </Col>
                     <Col xs='12' md='6'>
-                        <p className={isMobile ? classes.mobil : classes.copyright}>Built with ReactJS - aybertocarlos &copy; 2018</p>
+                        <p className={isMobile ? classes.mobil : classes.copyright}><FontAwesomeIcon icon={faReact}/> <FontAwesomeIcon icon={faJs}/> <FontAwesomeIcon icon={faHtml5}/> <FontAwesomeIcon icon={faCss3}/>. aybertocarlos &copy; 2018</p>
                     </Col>
                 </Row>
             </Container>

@@ -11,9 +11,13 @@ footer {
 li.footerItem {
   display: inline-block;
   padding: 18px;
-  color: white;
   font-size: 1em;
   font-family: Heebo, sans-serif;
+}
+
+li.footerItem a {
+  color: white;
+  text-decoration: none;
 }
 
 .copyright {
