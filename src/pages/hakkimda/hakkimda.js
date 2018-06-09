@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import {isMobile} from 'react-device-detect'
 
 import classes from './hakkimda.css'
-import BongSoon from '../../img/bongsoon.png'
+import BongSoon from '../../img/bongsoon2.png'
 
 const hakkimda = () => {
     const hyazi1 = "Eskiden PuzzleSubs Anime & Manga çeviri grubunda yöneticilik yapmış, ancak şu anda hiçbir grubun üyesi olmayan, gönüllü çevirmen bir birey.\n" +
@@ -17,12 +17,13 @@ const hakkimda = () => {
         <React.Fragment>
             <Container  className={classes.container}>
                 <Row>
-                    <Col md={{size: 9, offset: 3}} className={classes.header}>
+                    <Col xs='12' md={{size: 6, offset: 3}} className={classes.header}>
                         <span>Hakkımda</span>
                     </Col>
+                    {isMobile ? null : <Col md='3' className={classes.anasayfa}><p>Ana sayfaya git</p></Col>}
                     <Col md='12'>
                         <Row>
-                            <Col md='3' className={isMobile ? classes["avatar-mobile"] : classes.avatar + ' ' + classes["background-shadow"]}>
+                            <Col xs='12' md='3' className={isMobile ? classes["avatar-mobile"] : classes.avatar + ' ' + classes["background-shadow"]}>
                                 <img src={BongSoon} width="100%"/>
                             </Col>
                             <Col md='9' className={classes.yazi}>
