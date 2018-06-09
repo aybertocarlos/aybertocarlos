@@ -6,7 +6,6 @@ import {faReact, faHtml5, faCss3, faJs, faTwitter, faTwitch, faGithub} from '@fo
 
 import classes from './footer.css'
 import 'bootstrap/dist/css/bootstrap.css'
-import badge from '../../img/badge.png'
 
 const footer = () => {
     return (
