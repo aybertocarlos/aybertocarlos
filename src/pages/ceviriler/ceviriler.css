@@ -1,0 +1,9 @@
+.placeholder {
+  text-align: center;
+}
+
+.placeholder p {
+  color: white;
+  font-family: Poppins;
+  font-size: 3em;
+}

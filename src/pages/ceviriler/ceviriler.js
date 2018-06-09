@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios'
+import {Container, Row, Col} from 'reactstrap'
+
+import classes from './ceviriler.css'
+import 'bootstrap/dist/css/bootstrap.css'
 
 class Ceviriler extends Component {
     state = {
@@ -105,7 +109,15 @@ class Ceviriler extends Component {
 
     render() {
         return (
-            <div>ceviriler placeholder</div>
+            <React.Fragment>
+                <Container fluid>
+                    <Row>
+                        <Col md='12' className={classes.placeholder}>
+                            <p>Yakında...</p>
+                        </Col>
+                    </Row>
+                </Container>
+            </React.Fragment>
         )
     }
 }
