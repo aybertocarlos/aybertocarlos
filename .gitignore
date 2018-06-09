@@ -5,12 +5,13 @@
 
 # testing
 /coverage
+/.idea
 
 # production
 /build
+/.idea
 
 # misc
-/.idea
 /scripts
 .DS_Store
 .env.local
