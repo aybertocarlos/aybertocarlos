@@ -2,7 +2,7 @@ import React from 'react';
 import {Container, Row, Col} from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import classes from './index.css'
-import {isMobile} from 'react-device-detect'
+import {isMobile, isFirefox} from 'react-device-detect'
 //Resimler
 import cv1 from '../img/series/1.jpg'
 import cv2 from '../img/series/2.jpg'
@@ -29,7 +29,7 @@ const index = () => {
                             :
                             <Col md='1' style={{padding: 0}} className={classes.header + ' ' + classes["background-shadow"]}>
                                 <Col xs='12' md='12'>
-                                    <h2>FAVORİLERİM</h2>
+                                    <h2 style={isFirefox ? {marginTop: '1.2em', marginLeft: '11px'} : null}>FAVORİLERİM</h2>
                                 </Col>
                             </Col>}
                         <Col xs='12' md='11'>
@@ -53,30 +53,40 @@ const index = () => {
                                         <div className={classes.overlay}></div>
                                     </a>
                                 </Col>
-                                <Col xs='6' md='3' className={classes.poster}
+                                <Col xs='6' md='3' className={classes.poster + ' ' + classes.myanimelist}
                                      style={{backgroundImage: "url(" + cv4 + ")"}}>
                                     <h3>Love Live! Sunshine!!</h3>
-                                    <div className={classes.overlay}></div>
+                                    <a href="https://myanimelist.net/anime/32526/Love_Live_Sunshine">
+                                        <div className={classes.overlay}></div>
+                                    </a>
                                 </Col>
-                                <Col xs='6' md='3' className={classes.poster}
+                                <Col xs='6' md='3' className={classes.poster + ' ' + classes.myanimelist}
                                      style={{backgroundImage: "url(" + cv5 + ")"}}>
                                     <h3>Clannad</h3>
-                                    <div className={classes.overlay}></div>
+                                    <a href="https://myanimelist.net/anime/2167/Clannad">
+                                        <div className={classes.overlay}></div>
+                                    </a>
                                 </Col>
-                                <Col xs='6' md='3' className={classes.poster}
+                                <Col xs='6' md='3' className={classes.poster + ' ' + classes.myanimelist}
                                      style={{backgroundImage: "url(" + cv6 + ")"}}>
                                     <h3>Gakkou Gurashi!</h3>
-                                    <div className={classes.overlay}></div>
+                                    <a href="https://myanimelist.net/anime/24765/Gakkougurashi">
+                                        <div className={classes.overlay}></div>
+                                    </a>
                                 </Col>
-                                <Col xs='6' md='3' className={classes.poster}
+                                <Col xs='6' md='3' className={classes.poster + ' ' + classes.myanimelist}
                                      style={{backgroundImage: "url(" + cv7 + ")"}}>
                                     <h3>Love Live! School Idol Project</h3>
-                                    <div className={classes.overlay}></div>
+                                    <a href="https://myanimelist.net/anime/15051/Love_Live_School_Idol_Project">
+                                        <div className={classes.overlay}></div>
+                                    </a>
                                 </Col>
-                                <Col xs='6' md='3' className={classes.poster}
+                                <Col xs='6' md='3' className={classes.poster + ' ' + classes.myanimelist}
                                      style={{backgroundImage: "url(" + cv8 + ")"}}>
                                     <h3>Shigatsu wa Kimi no Uso</h3>
-                                    <div className={classes.overlay}></div>
+                                    <a href="https://myanimelist.net/anime/23273/Shigatsu_wa_Kimi_no_Uso">
+                                        <div className={classes.overlay}></div>
+                                    </a>
                                 </Col>
                             </Row>
                         </Col>
