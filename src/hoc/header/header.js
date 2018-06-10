@@ -60,7 +60,7 @@ const Header = () => {
                             <li className={classes.headerItem}>Ana sayfa</li>
                         </NavLink>
                         <NavLink exact to='/ceviriler' activeClassName={classes.active}>
-                            <li className={classes.headerItem}>Çeviriler</li>
+                            <li className={classes.headerItem}>Çevirilerim</li>
                         </NavLink>
                         <NavLink exact to='/hakkimda' activeClassName={classes.active}>
                             <li className={classes.headerItem}>Hakkımda</li>
