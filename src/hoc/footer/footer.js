@@ -18,7 +18,7 @@ const footer = () => {
                         <li className={classes.footerItem}><a href="https://twitch.com/aybertocarlos">twitch.<FontAwesomeIcon icon={faTwitch}/></a></li>
                     </Col>
                     <Col xs='12' md='6'>
-                        <p className={isMobile ? classes.mobil : classes.copyright}><FontAwesomeIcon icon={faReact}/> <FontAwesomeIcon icon={faJs}/> <FontAwesomeIcon icon={faHtml5}/> <FontAwesomeIcon icon={faCss3}/>. aybertocarlos &copy; 2018</p>
+                        <p className={isMobile ? classes.mobil : classes.copyright}><FontAwesomeIcon icon={faReact} spin/> <FontAwesomeIcon icon={faJs}/> <FontAwesomeIcon icon={faHtml5}/> <FontAwesomeIcon icon={faCss3}/>. aybertocarlos &copy; 2018</p>
                     </Col>
                 </Row>
             </Container>
