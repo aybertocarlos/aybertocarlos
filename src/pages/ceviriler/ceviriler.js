@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios'
 import {Container, Row, Col} from 'reactstrap'
+import {PulseLoader} from 'react-spinners'
 
 import classes from './ceviriler.css'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -102,24 +103,76 @@ class Ceviriler extends Component {
         postGot: []
     }
 
-    componentDidMount () {
-        axios.get('https://api.jikan.moe/')
-            .then(res => {})
+    componentDidMount() {
+        this.state.posts.map(anime => {
+            axios.get('https://api.jikan.moe/' + anime.type + '/' + anime.id)
+                .then(res => {
+                    let oldArray = this.state.postGot
+                    let newArray = []
+                    newArray = {
+                        ...res.data,
+                        ...anime
+                    }
+                    this.setState({
+                        postGot: [
+                            ...oldArray,
+                            newArray
+                        ]
+                    })
+                    if (this.state.posts.length === this.state.postGot.length) {
+                        this.setState({loading: 0})
+                    }
+                })
+        })
     }
 
     render() {
+        let page = <div style={{margin: 'auto'}}><PulseLoader color={'#fff'}/></div>
+        if (!this.state.loading) {
+            page = this.state.postGot.map(res => {
+                return (
+                    <Col key={res.mal_id} md='3' className={classes["anime-container"]} style={{cursor: 'pointer'}} onClick={() => {
+                        window.open(
+                            res.link,
+                            '_blank'
+                        )
+                    }}>
+                        <Row>
+                            <Col md='3' className={classes.poster + ' ' + classes["background-shadow"]}
+                                 style={{backgroundImage: 'url(' + res.image_url + ')'}}>
+                            </Col>
+                            <Col md='9' className={classes["poster-title"]}>
+                                <p>{res.title}</p>
+                            </Col>
+                            <Col md='12'>
+                            </Col>
+                        </Row>
+                    </Col>
+                )
+            })
+        }
+
         return (
             <React.Fragment>
-                <Container fluid>
+                <Container fluid className={classes.container}>
                     <Row>
-                        <Col md='12' className={classes.placeholder}>
-                            <p>Yakında...</p>
+                        <Col md='3' className={classes["anime-container"]}>
+                            <Row>
+                                <Col md='3' className={classes.poster + ' ' + classes["background-shadow"] + ' ' + classes.bongsoon}>
+                                </Col>
+                                <Col md='9' className={classes["poster-title"]}>
+                                    <p>Çevirilerim</p>
+                                </Col>
+                                <Col md='12'>
+                                </Col>
+                            </Row>
                         </Col>
+                        {page}
                     </Row>
                 </Container>
             </React.Fragment>
-        )
+    )
     }
-}
+    }
 
-export default Ceviriler;
+    export default Ceviriler;
