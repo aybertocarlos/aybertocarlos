@@ -131,7 +131,7 @@ class Ceviriler extends Component {
         if (!this.state.loading) {
             page = this.state.postGot.map(res => {
                 return (
-                    <Col key={res.mal_id} md='3' className={classes["anime-container"]} style={{cursor: 'pointer'}} onClick={() => {
+                    <Col key={res.mal_id} xs='6' md='6' lg='4' xl='3' className={classes["anime-container"]} style={{cursor: 'pointer'}} onClick={() => {
                         window.open(
                             res.link,
                             '_blank'
@@ -144,8 +144,6 @@ class Ceviriler extends Component {
                             <Col md='9' className={classes["poster-title"]}>
                                 <p>{res.title}</p>
                             </Col>
-                            <Col md='12'>
-                            </Col>
                         </Row>
                     </Col>
                 )
@@ -156,14 +154,12 @@ class Ceviriler extends Component {
             <React.Fragment>
                 <Container fluid className={classes.container}>
                     <Row>
-                        <Col md='3' className={classes["anime-container"]}>
+                        <Col xs='6' md='6' lg='4' xl='3' className={classes["anime-container"]}>
                             <Row>
                                 <Col md='3' className={classes.poster + ' ' + classes["background-shadow"] + ' ' + classes.bongsoon}>
                                 </Col>
                                 <Col md='9' className={classes["poster-title"]}>
                                     <p>Çevirilerim</p>
-                                </Col>
-                                <Col md='12'>
                                 </Col>
                             </Row>
                         </Col>
