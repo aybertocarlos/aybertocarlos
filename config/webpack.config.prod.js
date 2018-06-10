@@ -20,7 +20,6 @@ const publicPath = paths.servedPath;
 // For these, "homepage" can be set to "." to enable relative asset paths.
 const shouldUseRelativeAssetPaths = publicPath === './';
 // Source maps are resource heavy and can cause out of memory issue for large source files.
-const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 // `publicUrl` is just like `publicPath`, but we will provide it to our app
 // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
 // Omit trailing slash as %PUBLIC_URL%/xyz looks better than %PUBLIC_URL%xyz.
@@ -54,7 +53,6 @@ module.exports = {
     bail: true,
     // We generate sourcemaps in production. This is slow but gives good results.
     // You can exclude the *.map files from the build during deployment.
-    devtool: shouldUseSourceMap ? 'source-map' : false,
     // In production, we only want to load the polyfills and the app code.
     entry: [require.resolve('./polyfills'), paths.appIndexJs],
     output: {
@@ -68,10 +66,6 @@ module.exports = {
         // We inferred the "public path" (such as / or /my-project) from homepage.
         publicPath: publicPath,
         // Point sourcemap entries to original disk location (format as URL on Windows)
-        devtoolModuleFilenameTemplate: info =>
-            path
-                .relative(paths.appSrc, info.absoluteResourcePath)
-                .replace(/\\/g, '/'),
     },
     resolve: {
         // This allows you to set a fallback for where Webpack should look for modules.
@@ -185,7 +179,6 @@ module.exports = {
                                                 modules: true,
                                                 localIdentName: '[name]__[local]__[hash:base64:5]',
                                                 minimize: true,
-                                                sourceMap: shouldUseSourceMap,
                                             },
                                         },
                                         {
@@ -233,7 +226,6 @@ module.exports = {
                                             options: {
                                                 importLoaders: 1,
                                                 minimize: true,
-                                                sourceMap: shouldUseSourceMap,
                                             },
                                         },
                                         {
@@ -331,7 +323,6 @@ module.exports = {
                 // https://github.com/facebookincubator/create-react-app/issues/2488
                 ascii_only: true,
             },
-            sourceMap: shouldUseSourceMap,
         }),
         // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
         new ExtractTextPlugin({
