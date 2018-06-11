@@ -4,12 +4,11 @@ import {withRouter} from 'react-router-dom'
 import {Container, Row, Col} from 'reactstrap'
 import {PulseLoader} from 'react-spinners'
 
-import classes from './anime.css'
+import classes from './manga.css'
 
-
-class Anime extends Component {
+class Manga extends Component {
     state = {
-        anime: {
+        manga: {
             title: '',
             score: '',
             poster: '',
@@ -21,7 +20,7 @@ class Anime extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://api.jikan.moe/anime/' + this.props.match.params.id)
+        axios.get('https://api.jikan.moe/manga/' + this.props.match.params.id)
             .then(res => {
                 let array = {
                     title: res.data.title,
@@ -32,7 +31,7 @@ class Anime extends Component {
                     genres: res.data.genre
                 }
                 this.setState({
-                    anime: {
+                    manga: {
                         ...array
                     },
                     loading: 0
@@ -41,7 +40,7 @@ class Anime extends Component {
     }
 
     render() {
-        const poster = 'url("' + this.state.anime.poster + '")'
+        const poster = 'url("' + this.state.manga.poster + '")'
         let page = <div style={{margin: 'auto'}}><PulseLoader color={'#fff'}/></div>
         if (!this.state.loading) {
             page =
@@ -50,13 +49,13 @@ class Anime extends Component {
                     </Col>
                     <Col xs='12' md='10' className={classes["info-container"]}>
                         <Row>
-                            <h2>{this.state.anime.title}</h2>
+                            <h2>{this.state.manga.title}</h2>
                             <Col xs='12' md='12'>
-                                <p>{this.state.anime.synopsis}</p>
+                                <p>{this.state.manga.synopsis}</p>
                             </Col>
                             <Col xs='12' md='6' className={classes.genre}>
                                 <h6>Türler</h6>
-                                {this.state.anime.genres.map(genre => (
+                                {this.state.manga.genres.map(genre => (
                                     <div key={genre.name}>{genre.name}</div>
                                 ))}
                             </Col>
@@ -64,7 +63,7 @@ class Anime extends Component {
                                 <h6>Linkler</h6>
                                 <div className={classes["div-link"]} onClick={() => {
                                     window.open(
-                                        this.state.anime.link_canonical,
+                                        this.state.manga.link_canonical,
                                         '_blank'
                                     )
                                 }}>MyAnimeList</div>
@@ -86,4 +85,4 @@ class Anime extends Component {
     }
 };
 
-export default withRouter(Anime);
+export default withRouter(Manga);

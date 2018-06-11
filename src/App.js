@@ -7,6 +7,9 @@ import Index from './pages/index'
 import Iletisim from './pages/iletisim/iletisim'
 import Hakkimda from './pages/hakkimda/hakkimda'
 import Ceviriler from './pages/ceviriler/ceviriler'
+import Anime from './pages/ceviriler/anime/anime'
+import Manga from './pages/ceviriler/manga/manga'
+
 
 class App extends Component {
     render() {
@@ -27,9 +30,19 @@ class App extends Component {
                         <Hakkimda/>
                     </Wrapper>
                 )}/>
-                <Route path='/ceviriler' exact component={() => (
+                <Route path='/cevirilerim' exact component={() => (
                     <Wrapper>
                         <Ceviriler/>
+                    </Wrapper>
+                )}/>
+                <Route path={'/cevirilerim/anime/:id'} exact component={() => (
+                    <Wrapper>
+                        <Anime/>
+                    </Wrapper>
+                )}/>
+                <Route path={'/cevirilerim/manga/:id'} exact component={() => (
+                    <Wrapper>
+                        <Manga/>
                     </Wrapper>
                 )}/>
             </React.Fragment>

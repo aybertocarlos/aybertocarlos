@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios'
 import {Container, Row, Col} from 'reactstrap'
 import {PulseLoader} from 'react-spinners'
+import {withRouter} from 'react-router-dom'
 
 import classes from './ceviriler.css'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -126,17 +127,16 @@ class Ceviriler extends Component {
         })
     }
 
+    clickHandler = (id, type) => {
+        this.props.history.push('/cevirilerim/' + type + '/' + id)
+    }
+
     render() {
         let page = <div style={{margin: 'auto'}}><PulseLoader color={'#fff'}/></div>
         if (!this.state.loading) {
             page = this.state.postGot.map(res => {
                 return (
-                    <Col key={res.mal_id} xs='6' md='6' lg='4' xl='3' className={classes["anime-container"]} style={{cursor: 'pointer'}} onClick={() => {
-                        window.open(
-                            res.link,
-                            '_blank'
-                        )
-                    }}>
+                    <Col key={res.mal_id} xs='6' md='6' lg='4' xl='3' className={classes["anime-container"]} style={{cursor: 'pointer'}} onClick={() => this.clickHandler(res.mal_id, res.type)}>
                         <Row>
                             <Col md='3' className={classes.poster + ' ' + classes["background-shadow"]}
                                  style={{backgroundImage: 'url(' + res.image_url + ')'}}>
@@ -171,4 +171,4 @@ class Ceviriler extends Component {
     }
     }
 
-    export default Ceviriler;
+    export default withRouter(Ceviriler);
