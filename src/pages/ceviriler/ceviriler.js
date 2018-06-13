@@ -124,6 +124,9 @@ class Ceviriler extends Component {
                         this.setState({loading: 0})
                     }
                 })
+                .catch(err => {
+                    this.setState({error: 1, errorMsg: err.message})
+                })
         })
     }
 
@@ -136,7 +139,8 @@ class Ceviriler extends Component {
         if (!this.state.loading) {
             page = this.state.postGot.map(res => {
                 return (
-                    <Col key={res.mal_id} xs='6' md='6' lg='4' xl='3' className={classes["anime-container"]} style={{cursor: 'pointer'}} onClick={() => this.clickHandler(res.mal_id, res.type)}>
+                    <Col key={res.mal_id} xs='6' md='6' lg='4' xl='3' className={classes["anime-container"]}
+                         style={{cursor: 'pointer'}} onClick={() => this.clickHandler(res.mal_id, res.type)}>
                         <Row>
                             <Col md='3' className={classes.poster + ' ' + classes["background-shadow"]}
                                  style={{backgroundImage: 'url(' + res.image_url + ')'}}>
@@ -156,10 +160,11 @@ class Ceviriler extends Component {
                     <Row>
                         <Col xs='6' md='6' lg='4' xl='3' className={classes["anime-container"]}>
                             <Row>
-                                <Col md='3' className={classes.poster + ' ' + classes["background-shadow"] + ' ' + classes.bongsoon}>
+                                <Col md='3'
+                                     className={classes.poster + ' ' + classes["background-shadow"] + ' ' + classes.bongsoon}>
                                 </Col>
                                 <Col md='9' className={classes["poster-title"]}>
-                                    <p>Çevirilerim</p>
+                                    {this.state.error ? <p>! {this.state.errorMsg} !</p> : <p>Çevirilerim</p>}
                                 </Col>
                             </Row>
                         </Col>
@@ -167,8 +172,8 @@ class Ceviriler extends Component {
                     </Row>
                 </Container>
             </React.Fragment>
-    )
+        )
     }
-    }
+}
 
-    export default withRouter(Ceviriler);
+export default withRouter(Ceviriler);
