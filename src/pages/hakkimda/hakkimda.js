@@ -8,7 +8,7 @@ import classes from './hakkimda.css'
 import BongSoon from '../../img/bongsoon2.png'
 
 const hakkimda = () => {
-    const hyazi1 = "Eskiden PuzzleSubs Anime & Manga çeviri grubunda yöneticilik yapmış, şu anda da aktif olarak KoreanTürk Çeviri Grubunda çevirmenlik yapan, gönüllü bir birey.\n" +
+    const hyazi1 = "PuzzleSubs Anime & Manga çeviri grubunda encoderlık yapan bir birey. KoreanTürk Çeviri Grubunda da çevirmenlik yapmışlığı vardır.\n" +
         "Son zamanlarda anime izlemeyi bırakıp, Kore dizilerinin dünyasına dalmıştır. Şu anki öncelikli amacı, Netflix üzerindeki Kore dizilerinin hepsini bitirmektir.\n"
 
     const hyazi2 = "Dram & Komedi & Romantizm \"genre\"larının hayranı.\n" +
