@@ -15,7 +15,7 @@ const footer = () => {
                     <Col xs='12' md='6' className={isMobile ? classes.mobil : null}>
                         <li className={classes.footerItem}><a href="https://github.com/aybertocarlos">github.<FontAwesomeIcon icon={faGithub}/></a></li>
                         <li className={classes.footerItem}><a href="https://twitter.com/aybertocarlos">twitter.<FontAwesomeIcon icon={faTwitter}/></a></li>
-                        <li className={classes.footerItem}><a href="https://twitch.com/aybertocarlos">twitch.<FontAwesomeIcon icon={faTwitch}/></a></li>
+                        <li className={classes.footerItem}><a href="https://twitch.tv/aybertocarlos">twitch.<FontAwesomeIcon icon={faTwitch}/></a></li>
                     </Col>
                     <Col xs='12' md='6'>
                         <p className={isMobile ? classes.mobil : classes.copyright}><FontAwesomeIcon icon={faReact} spin/> <FontAwesomeIcon icon={faJs}/> <FontAwesomeIcon icon={faHtml5}/> <FontAwesomeIcon icon={faCss3}/>. aybertocarlos &copy; 2018</p>
