@@ -15,36 +15,14 @@ class App extends Component {
     render() {
         return (
             <React.Fragment>
-                <Route path='/' exact component={() => (
-                    <Wrapper>
-                        <Index/>
-                    </Wrapper>
-                )}/>
-                <Route path='/iletisim' exact component={() => (
-                    <Wrapper>
-                        <Iletisim/>
-                    </Wrapper>
-                )}/>
-                <Route path='/hakkimda' exact component={() => (
-                    <Wrapper>
-                        <Hakkimda/>
-                    </Wrapper>
-                )}/>
-                <Route path='/cevirilerim' exact component={() => (
-                    <Wrapper>
-                        <Ceviriler/>
-                    </Wrapper>
-                )}/>
-                <Route path={'/cevirilerim/anime/:id'} exact component={() => (
-                    <Wrapper>
-                        <Anime/>
-                    </Wrapper>
-                )}/>
-                <Route path={'/cevirilerim/manga/:id'} exact component={() => (
-                    <Wrapper>
-                        <Manga/>
-                    </Wrapper>
-                )}/>
+                <Wrapper>
+                    <Route path='/' exact component={Index}/>
+                    <Route path='/iletisim' exact component={Iletisim}/>
+                    <Route path='/hakkimda' exact component={Hakkimda}/>
+                    <Route path='/cevirilerim' exact component={Ceviriler}/>
+                    <Route path={'/cevirilerim/anime/:id'} exact component={Anime}/>
+                    <Route path={'/cevirilerim/manga/:id'} exact component={Manga}/>
+                </Wrapper>
             </React.Fragment>
         );
     }
